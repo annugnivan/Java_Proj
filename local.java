@@ -57,6 +57,7 @@ public class local extends main {
             System.out.println("\n");
         }
         
+        //counter to print out the money value
         for (int i = 1; i <= months; i++) {
             
             if (i == 1) {
