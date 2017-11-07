@@ -8,7 +8,6 @@ public class local extends main {
     double deposit = 0;
     double monthly = 0;
     int months = 0;
-    int naranja = 0;
     
     public double Emergency (double x) {
         
