@@ -8,6 +8,7 @@ public class local extends main {
     double deposit = 0;
     double monthly = 0;
     int months = 0;
+    int naranja = 0;
     
     public double Emergency (double x) {
         
@@ -87,7 +88,7 @@ public class local extends main {
     public double Retirement (double x) {
         
         Scanner sc = new Scanner(System.in);
-        intrate = (1 / 12);
+        intrate = (0.083);
         System.out.println("\nPlease enter your deposit value");
 
         System.out.print("Deposit: ");
@@ -368,7 +369,6 @@ public class local extends main {
         
         System.out.println("You have chosen local savings plan!\n");
         System.out.println("Below are list of savings plans (descriptions included) available for your choosing.\n");
-        System.out.println("Please note that each savings plan requires a monthly deposit.");
         
         while (taquito) {
             
@@ -393,7 +393,6 @@ public class local extends main {
             switch (tostada) {
                 case 1: System.out.println("You have chosen Emergency Savings Plan!\n");
                         money.Emergency(0);
-                        System.out.println("Would you like to return to the menu?");
                         break;
                 case 2: System.out.println("You have chosen Retirement Savings Plan!\n");
                         money.Retirement(0);

@@ -1,4 +1,5 @@
 package java_project;
+import java.io.IOException;
 import java.util.*;
 
 /*
@@ -13,12 +14,19 @@ public class main {
     public void foreignamt() {
         //dummy methods
     }
+
+    public static void Loginmenu ()throws IOException{
+        
+    }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         
         Scanner sc = new Scanner(System.in);
         boolean cheese = true; //as long as cheese = true, the program will not shut down
         
+        LoginMenu Object = new LoginMenu();
+        LoginMenu.Loginmenu();
+           
         while (cheese) {
         
             System.out.println("Good day! What you like to do today?\n");

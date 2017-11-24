@@ -1,14 +1,17 @@
-
 package java_project;
 
 import java.io.*;
 import java.util.*;
 
-public class LoginMenu extends Java_Project {
+public class LoginMenu extends main {
     
     public static void Loginmenu ()throws IOException{
        
+        String name;
+        String password;
+        boolean start = true;
         
+        while (start){
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Select the following options");
@@ -25,30 +28,28 @@ public class LoginMenu extends Java_Project {
         switch(optionLOGIN){
             case 1: System.out.println("Creating new account");
                     System.out.print("Username: ");
-                    String name = sc.next();
+                    name = sc.next();
                     System.out.print("Password: ");
-                    String password = sc.next();
+                    password = sc.next();
                     
-                    Reg user = new Reg(name, password);
+                    Reg user1 = new Reg(name, password);
                     
-                    user.print();
-                    user.saveDeets();
+                    user1.Registration();
+                    user1.SavedLoc();
                     break;
                    
             case 2: System.out.println("Sign In");
                     System.out.print("Enter Username: ");
-                    String UserN = sc.next();
+                    name = sc.next();
                     System.out.print("Enter Password: ");
-                    String Pword = sc.next();
-                    SignIn user = new SignIn(UserN, Pword);
+                    password = sc.next();
+                    SignIn user2 = new SignIn(name, password);
 
-                    user.loggerin();
-                    break;
+                    user2.Signingin();
+                    start = false;
+            }
         }
-        
     }
-
-    
-    }
+}
     
 
