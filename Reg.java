@@ -2,22 +2,17 @@
 package java_project;
 import java.io.*;
 
-public class Reg {
+public class Reg extends LoginMenu {
     
     private String username;//this is the the username variable for reg
     private String password;//this is the password variable for reg
-    
-    /*
-    private String reg_username;
-    private String reg_password;
-    */
 
     public Reg(){
     }
 
     public Reg(String username, String password){
-        this.username = username; //this transfers the login input from LoginMenu to the username variable here
-        this.password = password; //this transfers the login input from LoginMenu to the password variable here
+        this.username = username;//this transfers the login input from LoginMenu to the username variable here
+        this.password = password;//this transfers the login input from LoginMenu to the password variable here
     }
 
     public String getUsername(){
@@ -27,8 +22,6 @@ public class Reg {
     public void setUsername(String username){
         this.username = username;
     }
-    
-    //getter and setter makes the variables accessible throughout the whole program
 
     public String getPassword(){
         return password;
@@ -37,45 +30,39 @@ public class Reg {
     public void setPassword(String password){
         this.password = password;
     }
-    
-    //getter and setter makes the variables accessible throughout the whole program
-
-    public void print(){
-        System.out.println("Welcome, " + username + ", you are now successfully registered!");
+//getter and setter makes the variables accessible throughout the whole program
+    public void Registration(){
+        System.out.println("Registration Successful.");
     }
-    
-    //saveDeets here is when the input is written into a file that serves as a database
-    public void saveDeets() throws IOException{
+
+    public void SavedLoc() throws IOException{
         FileWriter fileWrite = null;
         BufferedWriter bufferedWrite = null;
 
         try{
-            File file = new File("database.txt");
-            
-            //creates a database.txt within the project folder
-            //we should rename it to user_log
+            File saveloc = new File("User_Data.txt");// create new txt file 
 
-            if(!file.exists()) {
-                file.createNewFile();
+            if(!saveloc.exists()) {
+                saveloc.createNewFile();//create new txt file if txt don't exist
             }
-            fileWrite = new FileWriter(file.getAbsoluteFile(),true);
+            fileWrite = new FileWriter(saveloc.getAbsoluteFile(),true); // save username & password into txt file
             bufferedWrite = new BufferedWriter(fileWrite);
 
-            bufferedWrite.write("\n" + username + " " + password);
-        } catch (IOException e){
-            e.getCause();
-        } finally {
-            try {
-                if (bufferedWrite != null){
-                    bufferedWrite.close();
-                }
-                if (fileWrite != null){
-                    fileWrite.close();
-                }
+            bufferedWrite.write(username + "\t" + password +"\n");
+        
             } catch (IOException e){
-                e.getCause();
+            e.getCause();
+            } finally {
+                    try {
+                    if (bufferedWrite != null){
+                        bufferedWrite.close();//close file
+                        }
+                    if (fileWrite != null){
+                    fileWrite.close();//close file
+                    }
+                    } catch (IOException e){
+                    e.getCause();
+                    }
             }
         }
-}
-    
-}
+    }
