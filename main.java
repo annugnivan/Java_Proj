@@ -8,12 +8,8 @@ import java.util.*;
 public class main {
     
     public void localamt() {
-        //dummy methods
+        //dummy methods to be overidden
     }   
-    
-    public void foreignamt() {
-        //dummy methods
-    }
 
     public static void Loginmenu ()throws IOException{
         
@@ -60,6 +56,7 @@ public class main {
 
                         switch (option2)    {
                             case 1: 
+                                //using overriding method
                                 local localObject = new local();
 
                                 localObject.localamt();
@@ -68,8 +65,9 @@ public class main {
                             case 2:
                                 foreign foreignObject = new foreign();
                                 
-                                foreignObject.foreignamt();
-                                break; 
+                                foreignObject.calculation();
+                                
+                                break;
                         }    
                 case 2: //Printwriter I/O
                         break;
