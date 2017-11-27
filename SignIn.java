@@ -9,7 +9,7 @@ public class SignIn extends LoginMenu {
     private String username;
     private String password;
 
-    public SignIn(){
+    public SignIn(){//default constructor
     }
 
     public SignIn(String username, String password){
@@ -34,17 +34,20 @@ public class SignIn extends LoginMenu {
     }
 
     public void Signingin() throws IOException{
-        String saveLoc = null;
-        FileReader datastorage = null;
+        String saveLoc;
+        FileReader datastorage;
+        String[] loginDetail;
         boolean signIn = false;
         
         try{
             datastorage = new FileReader("User_Data.txt");
-            BufferedReader br = new BufferedReader(datastorage);
+            BufferedReader br2 = new BufferedReader(datastorage);
 
-            while((username = br.readLine()) != null){
-            String[] UserDetail = username.split("\\s");
-                    if(username.equals(UserDetail[0]) && password.equals(UserDetail[1])){
+            while((username = br2.readLine()) != null){
+            
+            loginDetail = username.split("-");
+                     
+                    if(username.equals(loginDetail[0]) && password.equals(loginDetail[1])){
                     signIn = true;
                     System.out.println("Sign in succesful.");
                     break;
@@ -56,7 +59,7 @@ public class SignIn extends LoginMenu {
             }
 
             } catch (IOException e){
-            e.getCause();
+            System.out.println("An error has occurred");
             }
         
     }
