@@ -26,13 +26,13 @@ public class main {
         while (cheese) {
         
             System.out.println("Good day! What you like to do today?\n");
-            System.out.println("    1. Savings plans catalogue\n    2. Savings plan tracker\n    3. Watch some helpful videos by our partners to help you start investing!\n    4. Quit\n");
+            System.out.println("    1. Savings plans catalogue\n    2. Savings plan tracker\n    3. Currency converter\n    4. Calculator\n    0. Quit\n");
             System.out.print("Option: ");
             
         
             int option = sc.nextInt();
             
-            while (option < 1 || option > 4){
+            while (option < 0 || option > 4){
                 System.out.println("Invalid input. Please try again");
                 System.out.print("Option: ");
                 option = sc.nextInt();
@@ -63,6 +63,7 @@ public class main {
                                 break;
                                 
                             case 2:
+                                //calling objects
                                 foreign foreignObject = new foreign();
                                 
                                 foreignObject.calculation();
@@ -73,7 +74,10 @@ public class main {
                         break;
                 case 3: //no choice but to use Jlabels for this shit
                         break;
-                case 4: System.out.println("Program end");
+                case 4: currency_converter conv = new currency_converter();
+                        conv.currency();
+                        break;
+                case 0: System.out.println("Program end");
                         cheese = false;
                         break;
             }
