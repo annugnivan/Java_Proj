@@ -6,7 +6,7 @@ import java.util.*;
 public class LoginMenu extends main {
     
     public static void Loginmenu ()throws IOException{
-       
+        
         String name;
         String password;
         boolean start = true;
@@ -14,6 +14,7 @@ public class LoginMenu extends main {
         while (start){
         Scanner sc = new Scanner(System.in);
         
+        System.out.println("Welcome to Junior's Savers App");
         System.out.println("Select the following options");
         System.out.println("1: Sign Up \n2: Sign In\n");
         System.out.print("Option: ");
@@ -26,15 +27,17 @@ public class LoginMenu extends main {
                 optionLOGIN = sc.nextInt();}
         
         switch(optionLOGIN){
-            case 1: System.out.println("Creating new account");
+            case 1: System.out.println("Creating a new account");
+                    System.out.println("Enter a username");
                     System.out.print("Username: ");
                     name = sc.next();
+                    System.out.println("Enter a password");
                     System.out.print("Password: ");
                     password = sc.next();
                     
                     Reg user1 = new Reg(name, password);
                     
-                    user1.Registration();
+                    System.out.println("You have succesfully registered an account");
                     user1.SavedLoc();
                     break;
                    
